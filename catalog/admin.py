@@ -1,12 +1,13 @@
 from django.contrib import admin
-from catalog.models import Category, Products
+from catalog.models import Category, Product
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name',)
 
 
-@admin.register(Products)
+@admin.register(Product)
 class ProductsAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'price', 'category')
     list_filter = ('category',)
