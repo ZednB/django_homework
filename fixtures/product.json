@@ -1,0 +1,80 @@
+ [
+   {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Телевизор",
+      "description": "Большой новый телевизор",
+      "photo": "",
+      "category": 5,
+      "price": 20000,
+      "created_date": "2024-02-18T20:54:44Z",
+      "uploaded_at": "2024-02-18T20:54:46Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Смартфон",
+      "description": "Смартфон с поддержкой LTE",
+      "photo": "",
+      "category": 5,
+      "price": 30000,
+      "created_date": "2024-02-18T20:55:15Z",
+      "uploaded_at": "2024-02-18T20:55:18Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Брюки",
+      "description": "Фиолетовые брюки модные",
+      "photo": "",
+      "category": 6,
+      "price": 1500,
+      "created_date": null,
+      "uploaded_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Рубашка",
+      "description": "Рубашка Элвиса Пресли",
+      "photo": "",
+      "category": 6,
+      "price": 2000,
+      "created_date": null,
+      "uploaded_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Диван",
+      "description": "Диван на котором сразу засыпаешь",
+      "photo": "",
+      "category": 4,
+      "price": 15000,
+      "created_date": null,
+      "uploaded_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Шкаф",
+      "description": "Шкаф-купе для хранения вещей",
+      "photo": "",
+      "category": 4,
+      "price": 18000,
+      "created_date": null,
+      "uploaded_at": null
+    }
+  }
+]
