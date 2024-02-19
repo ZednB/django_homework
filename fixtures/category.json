@@ -1,7 +1,15 @@
 [
   {
     "model": "catalog.category",
-    "pk": 1,
+    "pk": 4,
+    "fields": {
+      "name": "Мебель",
+      "description": "Диваны, спальные атрибуты"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
     "fields": {
       "name": "Техника",
       "description": "Электронная бытовая техника"
@@ -9,18 +17,10 @@
   },
   {
     "model": "catalog.category",
-    "pk": 2,
+    "pk": 6,
     "fields": {
       "name": "Одежда",
       "description": "Новая коллекция одежды весна-осень"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 3,
-    "fields": {
-      "name": "Мебель",
-      "description": "Диваны, спальные атрибуты"
     }
   }
 ]
