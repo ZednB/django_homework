@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_homework',
         'USER': 'postgres',
-        'PASSWORD': '1111'
+        'PASSWORD': '1111',
     }
 }
 
