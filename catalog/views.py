@@ -18,8 +18,8 @@ def contacts(request):
     return render(request, 'catalog/contacts.html')
 
 
-def base(request, pk):
+def product(request, pk):
     context = {
         'product': Product.objects.get(pk=pk),
     }
-    return render(request, 'catalog/base.html', context)
+    return render(request, 'catalog/products.html', context)
