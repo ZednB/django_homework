@@ -1,29 +1,25 @@
 {% extends 'catalog/base.html' %}
+{% load my_tags %}
 {% block content %}
 <div class="container">
     <div class="row text-center">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Вы можете создать новый блог</h3>
-            </div>
-            <a href="{% url 'create_blog' %}" class="p-3 btn btn-outline-primary">Создать</a>
-        </div>
-        {% for object in blog_list %}
-        <div class="col-6">
+        <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
                 </div>
+                <img class=card-img-top" src="{{ object.image|mymedia }}">
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li>- Просмотры: {{ object.views_of_number }}</li>
+                        <li>- Описание: {{ object.content|truncatechars:100 }}</li>
+                        <li>- Просмотры: {{ object.views_number }}</li>
                         <li>- Дата создания: {{ object.created_at }}</li>
                     </ul>
-                    <a href="{% url 'detail_blog' object.pk %}" class="p-3 btn btn-outline-primary">Перейти</a>
+                    <a href="{% url 'update_blog' object.pk %}" class="p-3 btn btn-outline-warning mb-1">Редактировать</a>
+                    <a href="{% url 'delete_blog' object.pk %}" class="p-3 btn btn-outline-danger">Удалить</a>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

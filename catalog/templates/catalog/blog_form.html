@@ -12,6 +12,9 @@
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 <button type="submit" class="btn btn-primary">Создать</button>
+                                <div class="btn-group">
+                                    <a href="{% url 'list_blog' %}">Отмена</a>
+                                </div>
                             </form>
                         </div>
                     </div>
