@@ -8,6 +8,7 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{ product.name }}</h4>
                 </div>
+                <img class=card-img-top" src="{{ product.photo|mymedia }}">
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">{{ object.price }}</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
@@ -16,9 +17,10 @@
                         <li>- Дата создания: {{ product.created_date }}</li>
                         <li>- Дата изменения: {{ product.uploaded_at }}</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-3">Купить</button>
+                    <a href="{% url 'update_product' object.pk %}" class="p-3 btn btn-outline-warning mb-3">Редактировать</a>
+                    <a href="{% url 'delete_product' object.pk %}" class="p-3 btn btn-outline-danger mb-3">Удалить</a>
                 </div>
-                <img class=card-img-top" src="{{ product.photo|mymedia }}">
             </div>
         </div>
     </div>

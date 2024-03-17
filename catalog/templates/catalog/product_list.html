@@ -23,8 +23,11 @@
                     </ul>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li>- {{ product.description|truncatechars:100 }}</li>
+                        <li>- Активная версия: <strong>{{ product.active_version }}</strong>
+                        <li>{{ product.version_numbers }}</li>
+                        <li>{{ product.is_actives }}</li>
                     </ul>
-                    <a class="p-2 btn btn-outline-primary" href="/product/{{ product.pk }}/">Купить</a>
+                    <a class="p-2 btn btn-outline-primary mb-3" href="/product/{{ product.pk }}/">Купить</a>
                 </div>
             </div>
         </div>

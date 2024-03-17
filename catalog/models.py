@@ -21,8 +21,8 @@ class Product(models.Model):
     photo = models.ImageField(upload_to='product/', **NULLABLE, verbose_name='Фото')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     price = models.IntegerField(verbose_name='Цена')
-    created_date = models.DateTimeField(**NULLABLE, verbose_name='Дата создания')
-    uploaded_at = models.DateTimeField(**NULLABLE, verbose_name='Дата изменения')
+    created_date = models.DateTimeField(**NULLABLE, auto_now_add=True, verbose_name='Дата создания')
+    uploaded_at = models.DateTimeField(**NULLABLE, auto_now=True, verbose_name='Дата изменения')
 
     def __str__(self):
         return f"{self.name}({self.description}). Цена {self.price}"
@@ -54,10 +54,10 @@ class Version(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
     version_number = models.IntegerField(verbose_name='Номер версии')
     version_name = models.CharField(max_length=100, verbose_name='Название версии')
-    version_sign = models.BooleanField(default=True, verbose_name='Признак версии')
+    is_active = models.BooleanField(default=True, verbose_name='Признак версии')
 
     def __str__(self):
-        return f"{self.product} {self.version_name} - {self.version_sign}"
+        return f"{self.product} {self.version_name} - {self.version_number}"
 
     class Meta:
 
