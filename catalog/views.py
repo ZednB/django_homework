@@ -66,13 +66,11 @@ class ProductListView(ListView):
         products = Product.objects.all()
 
         for product in products:
-            version = Version.objects.filter(product=product)
-            active_version = version.filter(is_active=True).first()
+            active_version = Version.objects.filter(product=product, is_active=True).first()
             product.active_version = active_version.version_name if active_version else 'Нет активной версии'
-            # product.version_numbers = active_version.version_number if active_version else ''
-            # product.is_actives = active_version.is_active if active_version else False
-
-        context_data['product'] = products
+            product.version_numbers = active_version.version_number if active_version else ''
+            product.is_actives = active_version.is_active if active_version else False
+        context_data['products'] = products
         return context_data
 
 
@@ -120,6 +118,7 @@ class BlogUpdateView(UpdateView):
 
 class BlogListView(ListView):
     model = Blog
+    template_name = 'catalog/blog_list.html'
 
 
 class BlogDetailView(DetailView):

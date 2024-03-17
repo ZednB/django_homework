@@ -6,7 +6,7 @@
             <a class="btn btn-primary" href="{% url 'create_product' %}">Добавить продукт</a>
         </div>
 
-        {% for product in product_list %}
+        {% for product in products %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -23,7 +23,7 @@
                     </ul>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li>- {{ product.description|truncatechars:100 }}</li>
-                        <li>- Активная версия: <strong>{{ product.active_version }}</strong>
+                        <li><strong>{{ product.active_version }}</strong>
                         <li>{{ product.version_numbers }}</li>
                         <li>{{ product.is_actives }}</li>
                     </ul>
