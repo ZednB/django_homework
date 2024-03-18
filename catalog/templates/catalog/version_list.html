@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="card mb-5">
+            <div class="card-body">
+                <h3 class="card-title">Вы можете создать новую версию</h3>
+            </div>
+            <a href="{% url 'create_version' %}" class="p-3 btn btn-outline-primary">Создать</a>
+        </div>
+        {% for object in version_list %}
+        <div class="col-6">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.product }}</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>- {{ object.vesrsion_number }}</li>
+                        <li>- {{ object.version_name }}</li>
+                    </ul>
+                    <a href="{% url 'detail_version' object.pk %}" class="p-3 btn btn-outline-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

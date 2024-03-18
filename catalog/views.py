@@ -146,3 +146,29 @@ def toggle_activity(request, pk):
 
     blog_item.save()
     return redirect(reverse('list_blog'))
+
+
+class VersionListView(ListView):
+    model = Version
+    template_name = 'catalog/list_version.html'
+
+
+class VersionDetailView(DetailView):
+    model = Version
+
+
+class VersionCreateView(CreateView):
+    model = Version
+    form_class = VersionForm
+    success_url = reverse_lazy('list_version')
+
+
+class VersionUpdateView(UpdateView):
+    model = Version
+    form_class = VersionForm
+    success_url = reverse_lazy('list_version')
+
+
+class VersionDeleteView(DeleteView):
+    model = Version
+    success_url = reverse_lazy('list_version')
