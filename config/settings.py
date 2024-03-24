@@ -137,3 +137,10 @@ AUTH_USER_MODEL = 'users.User'
 
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'Bibulatov.zubayr@yandex.ru'
+EMAIL_HOST_PASSWORD = 'jqfodtbimtsnnmty'
