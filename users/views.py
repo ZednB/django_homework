@@ -1,15 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from users.models import User
-from django.urls import reverse_lazy
-from users.forms import UserRegisterForm
+from django.urls import reverse_lazy, reverse
+from users.forms import UserRegisterForm, UserForm
 from django.core.mail import send_mail
 from django.conf import settings
+import random
+from django.contrib.auth.hashers import make_password
 
 
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
+    success_url = reverse_lazy('catalog:base')
 
 
 class UserLogoutView(LogoutView):
@@ -31,3 +34,34 @@ class RegisterView(CreateView):
             recipient_list=[new_user.email],
         )
         return super().form_valid(form)
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    success_url = reverse_lazy('users:update')
+    form_class = UserForm
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+def generate_new_password(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        try:
+            user = User.objects.get(email=email)
+            new_password = ''.join([str(random.randint(0, 9)) for _ in range(12)])
+            send_mail(
+                subject='Вы сменили пароль',
+                message=f'Ваш новый пароль - {new_password}',
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[user.email],
+            )
+            user.set_password(new_password)
+            user.save()
+            return redirect(reverse('users:new_password_info'))
+        except User.DoesNotExist:
+            return render(request, 'users/new_password_form.html',
+                          context={'Пользователь с такой почтой не найден.'})
+    else:
+        return render(request, 'users/new_password_form.html')
