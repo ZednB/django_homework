@@ -10,6 +10,7 @@ urlpatterns = [
     path('logout/', UserLogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
     path('update/', UserUpdateView.as_view(), name='update'),
-    path('new_password/', generate_new_password, name='generate_new_password'),
-    path('new_password_info/', TemplateView.as_view(template_name='users/new_password_info.html'), name='new_password_info'),
+    path('password_reset_form/', generate_new_password, name='password_reset_form'),
+    path('password_reset_complete/',
+         TemplateView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
 ]

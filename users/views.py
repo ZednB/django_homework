@@ -59,9 +59,9 @@ def generate_new_password(request):
             )
             user.set_password(new_password)
             user.save()
-            return redirect(reverse('users:new_password_info'))
+            return redirect(reverse('users:password_reset_complete'))
         except User.DoesNotExist:
-            return render(request, 'users/new_password_form.html',
-                          context={'Пользователь с такой почтой не найден.'})
+            return render(request, 'users/password_reset_form.html',
+                          {'error': 'Пользователь с такой почтой не найден.'})
     else:
-        return render(request, 'users/new_password_form.html')
+        return render(request, 'users/password_reset_form.html')
