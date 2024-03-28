@@ -25,11 +25,17 @@ class Product(models.Model):
     created_date = models.DateTimeField(**NULLABLE, auto_now_add=True, verbose_name='Дата создания')
     uploaded_at = models.DateTimeField(**NULLABLE, auto_now=True, verbose_name='Дата изменения')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Владелец')
+    is_published = models.BooleanField(default=False, verbose_name='Признак публикации')
 
     def __str__(self):
         return f"{self.name}({self.description}). Цена {self.price}"
 
     class Meta:
+        permissions = [
+            ('cancel_publish', 'Can cancel product publication'),
+            ('can_change_description', 'Can change product description'),
+            ('can_change_category', 'Can change product category'),
+        ]
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
 

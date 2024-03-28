@@ -5,7 +5,10 @@ from catalog.models import Category, Product, Blog, Version
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from catalog.forms import ProductForm, VersionForm
 from django.forms import inlineformset_factory
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import Permission
+from django.http import HttpResponse
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):

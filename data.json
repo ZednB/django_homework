@@ -1,0 +1,278 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Мебель",
+      "description": "Диваны, спальные атрибуты"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Техника",
+      "description": "Электронная бытовая техника"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Одежда",
+      "description": "Новая коллекция одежды весна-осень"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Телевизор",
+      "description": "Большой новый телевизор",
+      "photo": "product/images.jpeg",
+      "category": 5,
+      "price": 20000,
+      "created_date": "2024-02-18T20:54:44Z",
+      "uploaded_at": "2024-03-17T20:21:59.294Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Смартфон",
+      "description": "Смартфон с поддержкой LTE",
+      "photo": "product/9932039d86b01a9877aef22db0d5190d.jpeg",
+      "category": 5,
+      "price": 30000,
+      "created_date": "2024-02-18T20:55:15Z",
+      "uploaded_at": "2024-03-17T19:13:24.992Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Брюки",
+      "description": "Фиолетовые брюки модные",
+      "photo": "product/istockphoto-1301138253-612x612.jpeg",
+      "category": 6,
+      "price": 1500,
+      "created_date": null,
+      "uploaded_at": "2024-03-17T19:15:09.026Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Рубашка",
+      "description": "Рубашка Элвиса Пресли",
+      "photo": "product/1836.14_9_500.jpeg",
+      "category": 6,
+      "price": 2000,
+      "created_date": null,
+      "uploaded_at": "2024-03-17T19:13:58.664Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Диван",
+      "description": "Диван на котором сразу засыпаешь",
+      "photo": "product/e6d5140b7d03fe97230bafa8c40e038d.png",
+      "category": 4,
+      "price": 15000,
+      "created_date": null,
+      "uploaded_at": "2024-03-17T20:10:53.443Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Шкаф",
+      "description": "Шкаф-купе для хранения вещей",
+      "photo": "product/0radpw0d-740x540.png",
+      "category": 4,
+      "price": 18000,
+      "created_date": null,
+      "uploaded_at": "2024-03-17T19:53:36.739Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Кресло",
+      "description": "Удобное кресло-качалка",
+      "photo": "product/e6d5140b7d03fe97230bafa8c40e038d_gVgK5tB.png",
+      "category": 4,
+      "price": 15000,
+      "created_date": null,
+      "uploaded_at": "2024-03-17T19:58:08.179Z"
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "fog",
+      "slug": "fog",
+      "content": "",
+      "image": "blog/0radpw0d-740x540_mtJuzmY.png",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 18
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 2,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "",
+      "image": "",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 8
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "Тестовые движения",
+      "image": "blog/0radpw0d-740x540_SiwVmcJ.png",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 53
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 7,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "",
+      "image": "",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 10
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 8,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "",
+      "image": "blog/0radpw0d-740x540_Xhu2U6E.png",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 4
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 9,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "",
+      "image": "",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 8
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 10,
+    "fields": {
+      "title": "Test",
+      "slug": "test",
+      "content": "HHGFF",
+      "image": "",
+      "created_at": null,
+      "public_sign": false,
+      "views_number": 4
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 3,
+      "version_number": 123,
+      "version_name": "Черные",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 6,
+      "version_number": 211,
+      "version_name": "Дубовый",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 7,
+      "version_number": 123,
+      "version_name": "12",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 5,
+      "version_number": 123,
+      "version_name": "Ljfsd",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 1,
+      "version_number": 1,
+      "version_name": "TV",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 6,
+      "version_number": 1,
+      "version_name": "name",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 8,
+    "fields": {
+      "product": 6,
+      "version_number": 1,
+      "version_name": "name",
+      "is_active": true
+    }
+  }
+]

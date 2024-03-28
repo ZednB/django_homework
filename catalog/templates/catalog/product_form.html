@@ -13,6 +13,9 @@
                 <div class="card-body">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    {% if perms.catalog.cancel_publish %}
+                    <label>Published:</label>
+                    {% endif %}
                     <div class="form-check">
                     </div>
                     <button type="submit" class="btn btn-lg btn-block btn-outline-primary">

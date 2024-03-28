@@ -16,6 +16,9 @@
                         <li>- Категория: {{ product.category }}</li>
                         <li>- Дата создания: {{ product.created_date }}</li>
                         <li>- Дата изменения: {{ product.uploaded_at }}</li>
+                        {% if perms.catalog.cancel_publish %}
+                        <li>- {{ product.is_published }}</li>
+                        {% endif %}
                     </ul>
                     <button type="button" class="btn btn-lg btn-block btn-outline-primary mb-3">Купить</button>
                     <a href="{% url 'update_product' object.pk %}" class="p-3 btn btn-outline-warning mb-3">Редактировать</a>
